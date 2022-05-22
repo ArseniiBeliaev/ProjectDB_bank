@@ -153,6 +153,18 @@ INSERT INTO contracts(kind,status,date_of_CoC,id_customer,id_employee_responsibl
 ('вклад','действует','2022-05-29',9,7),
 ('вклад','действует','2022-05-12',10,8);
 
+UPDATE contracts SET id_employee_responsible = 5 WHERE status = 'разорван' AND id_customer = 8;
+UPDATE contracts SET id_employee_responsible = 5 WHERE status = 'разорван' AND id_customer = 13;
+UPDATE contracts SET id_employee_responsible = 6 WHERE status = 'разорван' AND id_customer = 14;
+UPDATE contracts SET id_employee_responsible = 6 WHERE status = 'разорван' AND id_customer = 15;
+UPDATE contracts SET id_employee_responsible = 6 WHERE status = 'разорван' AND id_customer = 16;
+UPDATE contracts SET date_of_coc = '2020-01-01' WHERE id = 22;
+UPDATE contracts SET date_of_coc = '2018-02-02' WHERE id = 23;
+UPDATE contracts SET date_of_coc = '2017-11-11' WHERE id = 24;
+UPDATE contracts SET date_of_coc = '2022-12-05' WHERE id = 25;
+UPDATE contracts SET date_of_coc = '2021-07-09' WHERE id = 26;
+
+
 INSERT INTO black_list_customer(id_customer,reason,id_employee) VALUES
 (5,'невозврат',2),
 (2,'нарушение пользования',1),
@@ -191,6 +203,7 @@ INSERT INTO credits(id_contract,amount,interest_rate,monthly_payment,overdue_mon
 (17,400000,100,410,840,50130,'нет',0),
 (18,500000,140,340,840,303,'пылесос',200);
 
+
 INSERT INTO deposits(id_contract,balance,interest_rate,type,date_of_end) VALUES
 (19,10000,5,'до востребования',NULL),
 (20,12400,5,'до востребования',NULL),
@@ -203,3 +216,18 @@ INSERT INTO deposits(id_contract,balance,interest_rate,type,date_of_end) VALUES
 (27,13108000,5,'срочный','2024-05-29'),
 (28,42428600,5,'срочный','2025-05-12');
 
+INSERT INTO contracts(kind,status,date_of_CoC,id_customer,id_employee_responsible) VALUES
+('кредит','действует','2022-01-07',5,4),
+('кредит','действует','2021-03-12',5,2),
+('кредит','действует','2022-05-28',5,10),
+('кредит','действует','2019-12-22',7,11),
+('кредит','действует','2019-02-09',7,12),
+('кредит','действует','2021-01-11',8,13);
+
+INSERT INTO credits(id_contract,amount,interest_rate,monthly_payment,overdue_monthly,loan_balance,credit_security,
+                    amount_credit_security) VALUES
+(29,1000,10,420,840,5000,'нет',0),
+(30,2000,10,450,840,50000,'нет',0),
+(31,3000,200,470,840,5220,'кошка',1000),
+(32,4000,100,410,840,50130,'нет',0),
+(33,5000,140,340,840,303,'пылесос',200);
